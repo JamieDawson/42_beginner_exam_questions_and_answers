@@ -6,38 +6,37 @@
 /*   By: jadawson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 15:15:30 by jadawson          #+#    #+#             */
-/*   Updated: 2018/08/01 15:18:09 by jadawson         ###   ########.fr       */
+/*   Updated: 2019/02/21 18:28:06 by jadawson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     ft_putchar(char *c)
+#include <unistd.h>
+
+void	ft_putchar(char c)
 {
-	write(1, &c, 1);
+    write(1, &c, 1);
 }
-char    rotone(char *str)
+
+void	  rotone(char *str)
 {
-	int i;
-	i = 0;
-	while(str[i] != '\0')
+	int i = -1;
+
+	while (str[++i])
 	{
-		if(str[i] >= 'a' && str[i] < 'z' || str[i] >= 'A' && str[i] < 'Z')
+		if ((str[i] >= 'a' && str[i] <= 'y') || (str[i] >= 'A' && str[i] <= 'Y'))
 			ft_putchar(str[i] + 1);
-		else if(str[i] == 'z' || str[i] == 'Z')
+		else if (str[i] == 'z' || str[i] == 'Z')
 			ft_putchar(str[i] - 25);
 		else
 			ft_putchar(str[i]);
-		i++;
 	}
-	ft_putchar("\n");
-	return (*str);
 }
 int     main(int argc, char **argv)
 {
-	if(argc == 2)
-		rotone(argv[1]);
-	else
-		ft_putchar("\n");
-	return 0;
+    if(argc == 2)
+        rotone(argv[1]);
+    ft_putchar('\n');
+    return 0;
 }
 
 /*

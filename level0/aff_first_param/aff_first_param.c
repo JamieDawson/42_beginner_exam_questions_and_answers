@@ -36,6 +36,7 @@ int        main(int argc, char **argv)
     return (0);
 }
 
+
 /*
 Explained:
 1) int argc, char **argv  allow the program to accept arguments.

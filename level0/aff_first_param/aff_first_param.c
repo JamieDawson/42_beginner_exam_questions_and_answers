@@ -23,7 +23,7 @@ void    ft_putstr(char *str)
     i = 0;
     while (str[i])
     {
-        write(str[i]);
+        ft_putchar(str[i]);
         i++;
     }
 }
@@ -32,7 +32,7 @@ int        main(int argc, char **argv)
 {
     if (argc > 1)
         ft_putstr(argv[1]);
-    write(1, "\n", 1);
+    ft_putchar('\n');
     return (0);
 }
 

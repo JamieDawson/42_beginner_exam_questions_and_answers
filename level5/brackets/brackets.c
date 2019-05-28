@@ -6,7 +6,7 @@
 /*   By: jadawson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 19:26:41 by jadawson          #+#    #+#             */
-/*   Updated: 2019/05/27 20:47:28 by jadawson         ###   ########.fr       */
+/*   Updated: 2019/05/27 20:49:11 by jadawson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ int		main(int argc, char **argv)
 	return (0);
 }
 
+//Notes on what code is doing:
 /*
 1) create an array the size of the string provided.
 2) check if (, [, or {	
@@ -100,3 +101,47 @@ int		main(int argc, char **argv)
 		if matching
 			move array counter back 1 so it's looking at previous symbol.
 */
+
+//Moulinette test:
+/*
+
+./brackets '(toto)'
+OK
+./brackets '([)]'
+Error
+./brackets '' '{[(0 + 0)(1 + 1)](3*(-1)){()}}'
+OK
+OK
+./brackets
+
+./brackets '()' '[]' '{}' '' 'toto' '([{}[{(()[])}()]]())(((([])))())'
+OK
+OK
+OK
+OK
+OK
+OK
+./brackets '()[]{}' '([{}])[({})]{([])}'
+OK
+OK
+./brackets '(]' '{)' '[}' ')' '}' ')' '(' '{' '['
+Error
+Error
+Error
+Error
+Error
+Error
+Error
+Error
+Error
+./brackets '({)}' '[()]{}]' '])}' '([{' "(cette (trace n'a pas [de but precis]) {a part embeter (tout le monde)})"
+Error
+Error
+Error
+Error
+OK
+
+*/
+
+
+
